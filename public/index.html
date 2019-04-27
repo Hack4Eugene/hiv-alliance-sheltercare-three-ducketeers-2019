@@ -7,10 +7,56 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> 
         <title>ShelterCare Discrepency Reporter</title>
+
     </head>
     <body>
         <div class="container">
- 
+          <form>
+            <div>
+              <label for="clientname">Client Name</label>
+              <input type="text" id="clientname" name="clientname" maxlength="100" />
+            </div>
+            <div>
+              <label for="address">Address</label>
+              <input type="text" id="address" name="address" maxlength="100" />
+            </div>
+            <div>
+              <label for="program">Program</label>
+              <select id="program" name="program">
+                <option value="SRA">SRA</option>
+                <option value="SRA2">SRA2</option>
+                <option value="SRA-YA">SRA-YA</option>
+                <option value="Madrone">Madrone</option>
+                <option value="Spruce">Spruce</option>
+                <option value="Camas">Camas</option>
+                <option value="Sahalie">Sahalie</option>
+              </select>
+            </div>
+            <div>
+              <label for="issue">Issue Needing Attention</label>
+              <select id="issue" name="issue">
+                <option value="smoking">Smoking in Unit</option>
+                <option value="housekeeping">Housekeeping Issues</option>
+                <option value="guest">Guest Issues</option>
+                <option value="neighbor">Neighbor Complaint</option>
+                <option value="other">Other</option>
+              </select>
+              <input type="text" value="Please fill for Other"  />
+            </div>
+            <div>
+              <label for="response">Response</label>
+              <input type="radio" name="response" value="addressed"><label for="addressed">Addressed through Home Visit</label>
+              <input type="radio" name="response" value="inspection"><label for="inspection">Inspection Requested</label>
+              <input type="radio" name="response" value="notice"><label for="notice">Issue Notice</label>
+            </div>
+            <div>
+              <label for="comment">Comments</label>
+              <input type="text" maxlength="250" />
+            </div>
+            <div>
+              <input type="hidden" name="datetime" value=datetime />
+            </div>
+          </form>
         </div>
     </body>
 </html>
