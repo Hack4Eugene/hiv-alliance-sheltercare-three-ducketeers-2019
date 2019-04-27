@@ -1,6 +1,8 @@
 body {
     padding: 1em;
-    font-family: "Times New Roman", Times, serif;
+    font-family: 'Roboto', sans-serif;
+    background-image: linear-gradient(rgb(0,181,200), white);
+    color: rgb(68, 68, 68);
 }
 .form-group {
     padding: .5em;
