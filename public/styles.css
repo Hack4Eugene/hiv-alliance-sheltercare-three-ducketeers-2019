@@ -1,0 +1,13 @@
+body {
+    padding: 1em;
+    font-family: "Times New Roman", Times, serif;
+}
+.form-group {
+    padding: .5em;
+}
+.label {
+    font-weight: bold;
+}
+#other {
+    margin-left: 20px;
+}

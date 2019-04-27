@@ -1,23 +1,61 @@
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
-<link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
-<style>
-</style>
-<title>Encounter Portal</title>
-</head>
-<body>
-<center>
-<h1>Shelter Care Encounter Form Portals</h1>
-</center>
-<P>
-
-<div class="container" id="encounter">
-   <button id="EncounterLogin" class="btn btn-action" onclick="return validateUser();    ">Encounter Login</button>
-   <button id="ManagerLogin" class="btn btn-action" onclick="return validateAdmin();    ">Admin Login</button>
-</div>
-<script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
-<script src="./javascript/mis/app.js?v=5"></script>
-<script src="./javascript/user/login.js?v=14" type="application/javascript"> </script>
-</body>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> 
+        <link rel="stylesheet" type="text/css" href="styles.css" />
+        <title>ShelterCare Discrepency Reporter</title>
+    </head>
+    <body>
+        <div class="container">
+          <form method="POST">
+            <div class="form-group">
+              <label class="label" for="clientname">Client Name</label> <br />
+              <input type="text" class="form-group" id="clientname" name="clientname" maxlength="100" />
+            </div>
+            <div class="form-group">
+              <label class="label"for="address">Address</label><br />
+              <input type="text" class="form-group" id="address" name="address" maxlength="100" />
+            </div>
+            <div class="form-group">
+              <label class="label" for="program">Program</label><br />
+              <select id="program" class="form-group" name="program">
+                <option value="SRA">SRA</option>
+                <option value="SRA2">SRA2</option>
+                <option value="SRA-YA">SRA-YA</option>
+                <option value="Madrone">Madrone</option>
+                <option value="Spruce">Spruce</option>
+                <option value="Camas">Camas</option>
+                <option value="Sahalie">Sahalie</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="label" for="issue">Issue Needing Attention</label> <br />
+              <input type="checkbox" name="issue" value="smoking" /> <label for="smoking">Smoking in Unit</label><br />
+              <input type="checkbox" name="issue" value="housekeeping" /> <label for="housekeeping">Housekeeping Issues</label><br />
+              <input type="checkbox" name="issue" value="guest" /> <label for="guest">Guest Issues</label><br />
+              <input type="checkbox" name="issue" value="neighbor" /><label for="neighbor"> Neighbor Complaint</label><br />
+              <input type="checkbox" name="issue" value="other" /> <label for="other">Other Issue</label>
+              <br /><input type="text" id="other" class="form-group" placeholder="Please fill for Other"  />
+            </div>
+            <div class="form-group">
+              <label class="label" for="response">Response</label> <br />
+              <input type="checkbox" class="form-group" name="response" value="addressed"><label for="addressed">Addressed through Home Visit</label> <br />
+              <input type="checkbox" class="form-group" name="response" value="inspection"><label for="inspection">Inspection Requested</label> <br />
+              <input type="checkbox" class="form-group" name="response" value="notice"><label for="notice">Issue Notice</label> <br />
+            </div>
+            <div class="form-group">
+              <label class ="label" for="comment">Comments</label> <br />
+              <input type="text" maxlength="250" />
+            </div>
+            <div class="form-group">
+              <input type="submit" name="submit" value="Submit" />
+            </div>
+          </form>
+        </div>
+        <script src="../functions/index.js"></script>
+    </body>
 </html>
