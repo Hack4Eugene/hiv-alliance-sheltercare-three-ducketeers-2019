@@ -7,13 +7,13 @@
 //  response.send("Hello from Firebase!");
 // });
 
-function CheckOther(){
-    var val = $("#issue").val()
+function CheckOther(val){
+    //var val = $("#issueOther").val()
     if(val == "other") {
-        $("#other_issue").show();
+        $("#other").show();
     } 
     else {
-        $("#other_issue").hide();
+        $("#other").hide();
     }
 
 }
