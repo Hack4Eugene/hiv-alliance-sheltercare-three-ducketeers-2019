@@ -6,23 +6,23 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> 
+        <link rel="stylesheet" type="text/css" href="styles.css" />
         <title>ShelterCare Discrepency Reporter</title>
-
     </head>
     <body>
         <div class="container">
-          <form>
-            <div>
-              <label for="clientname">Client Name</label>
-              <input type="text" id="clientname" name="clientname" maxlength="100" />
+          <form method="POST">
+            <div class="form-group">
+              <label class="label" for="clientname">Client Name</label> <br />
+              <input type="text" class="form-group" id="clientname" name="clientname" maxlength="100" />
             </div>
-            <div>
-              <label for="address">Address</label>
-              <input type="text" id="address" name="address" maxlength="100" />
+            <div class="form-group">
+              <label class="label"for="address">Address</label><br />
+              <input type="text" class="form-group" id="address" name="address" maxlength="100" />
             </div>
-            <div>
-              <label for="program">Program</label>
-              <select id="program" name="program">
+            <div class="form-group">
+              <label class="label" for="program">Program</label><br />
+              <select id="program" class="form-group" name="program">
                 <option value="SRA">SRA</option>
                 <option value="SRA2">SRA2</option>
                 <option value="SRA-YA">SRA-YA</option>
@@ -32,32 +32,30 @@
                 <option value="Sahalie">Sahalie</option>
               </select>
             </div>
-            <div>
-              <label for="issue">Issue Needing Attention</label> <br />
-              <select id="issue" name="issue">
-                <option value="smoking">Smoking in Unit</option>
-                <option value="housekeeping">Housekeeping Issues</option>
-                <option value="guest">Guest Issues</option>
-                <option value="neighbor">Neighbor Complaint</option>
-                <option value="other">Other</option>
-              </select>
-              <br /><input type="text" value="Please fill for Other"  />
+            <div class="form-group">
+              <label class="label" for="issue">Issue Needing Attention</label> <br />
+              <input type="checkbox" name="issue" value="smoking" /> <label for="smoking">Smoking in Unit</label><br />
+              <input type="checkbox" name="issue" value="housekeeping" /> <label for="housekeeping">Housekeeping Issues</label><br />
+              <input type="checkbox" name="issue" value="guest" /> <label for="guest">Guest Issues</label><br />
+              <input type="checkbox" name="issue" value="neighbor" /><label for="neighbor"> Neighbor Complaint</label><br />
+              <input type="checkbox" name="issue" value="other" /> <label for="other">Other Issue</label>
+              <br /><input type="text" id="other" class="form-group" placeholder="Please fill for Other"  />
             </div>
-            <div>
-              <label for="response">Response</label> <br />
-              <input type="radio" name="response" value="addressed"><label for="addressed">Addressed through Home Visit</label> <br />
-              <input type="radio" name="response" value="inspection"><label for="inspection">Inspection Requested</label> <br />
-              <input type="radio" name="response" value="notice"><label for="notice">Issue Notice</label> <br />
+            <div class="form-group">
+              <label class="label" for="response">Response</label> <br />
+              <input type="checkbox" class="form-group" name="response" value="addressed"><label for="addressed">Addressed through Home Visit</label> <br />
+              <input type="checkbox" class="form-group" name="response" value="inspection"><label for="inspection">Inspection Requested</label> <br />
+              <input type="checkbox" class="form-group" name="response" value="notice"><label for="notice">Issue Notice</label> <br />
             </div>
-            <div>
-              <label for="comment">Comments</label> <br />
+            <div class="form-group">
+              <label class ="label" for="comment">Comments</label> <br />
               <input type="text" maxlength="250" />
             </div>
-            <div>
-              <input type="hidden" name="datetime" value=datetime />
+            <div class="form-group">
               <input type="submit" name="submit" value="Submit" />
             </div>
           </form>
         </div>
+        <script src="../index.js"></script>
     </body>
 </html>
