@@ -87,24 +87,25 @@ function deleteAdminFunction()
     {
       alert("please enter an admin email to change");
       return ;
+    }
       var adminEmail = admin.value;
       console.log(adminEmail);
       var db = firebase.database().ref();
-			var query = "/encounterAdmins/"+Parse(adminEmail);
-			console.log(query);
-			db.child(query).once("value").then(function(snapshot){
-			if (snapshot.exists()) {
-				if(confirm("Are you sure you want to delete this admin?"))
-				{ 
-					 db.child(query).remove();
-				}
+		var query = "/encounterAdmins/"+Parse(adminEmail);
+		console.log(query);
+		db.child(query).once("value").then(function(snapshot){
+		if (snapshot.exists()) {
+			if(confirm("Are you sure you want to delete this admin?"))
+			{ 
+				 db.child(query).remove();
+				 alert("Admin was successfully removed");
 			}
-			else
-			{
-				console.log("This admin does not exist.");
-			}
-			});
 		}
+		else
+		{
+			alert("This admin does not exist.");
+		}
+	});
 }
 
 function deleteUserFunction()
@@ -114,22 +115,24 @@ function deleteUserFunction()
     {
       alert("please enter an user email to change");
       return ;
+    }
       var userEmail = user.value;
       console.log(userEmail);
       var db = firebase.database().ref();
-			var query = "/encounterUser/"+Parse(userEmail);
-			console.log(query);
-			db.child(query).once("value").then(function(snapshot){
-			if (snapshot.exists()) {
-				if(confirm("Are you sure you want to delete this user?"))
-				{ 
-					 db.child(query).remove();
-				}
+		var query = "/encounterUsers/"+Parse(userEmail);
+		console.log(query);
+		db.child(query).once("value").then(function(snapshot){
+		if (snapshot.exists()) {
+			if(confirm("Are you sure you want to delete this user?"))
+			{ 
+				db.child(query).remove();
+				 alert("User was successfully removed");
 			}
-			else
-			{
-				console.log("This user does not exist.");
-			}
-			});
 		}
+		else
+		{
+			alert("This user does not exist.");
+		}
+	});
+		
 }
