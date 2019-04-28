@@ -10,9 +10,18 @@
   <title>Admin Portal</title>
   </head>
 <body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header navbar-brand">
+              Shelter Care Encounter Form Portals
+          </div>
+          <div class="nav navbar-nav">
+              <button id = "signout" onclick="return LogOut();">Sign Out</button>
+          </div>
+        </div>
+      </nav>
   <div class="container" id="update">
     <h1>Shelter Care Admin Portal</h1>
-    <button id="signout" class="btn btn-default" onclick="return LogOut();">Sign Out</button> <br />
     <div class="updateForm">
       <input type="text" class="updateForm" id="updateText" name="updateText" maxlength="100" placeholder="Enter text to update"/>
       <br />
