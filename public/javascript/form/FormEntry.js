@@ -50,9 +50,13 @@ function ParseForm()
 	return firebase.database().ref().update(updates);	
 }
 
-function fillPrograms(){
-	var programNames;
-	for(i=0, i>programNames.length; i++;){
-		document.getElementById("dynamicProgram").innerHTML="<option value='"+programNames[i]+"'>"+programNames[i]+"</option>";
-	}
+var programNames = ["howdy", "waddup"];
+var programs = [];
+function addProg(snap)
+{
+	console.log("rawr");
+	programs.push("<option value='"+snap+"'>"+snap+"</option>");
+	console.log(programs);
+	console.log(programNames);
 }
+document.getElementById("program").innerHTML = programs.join();
