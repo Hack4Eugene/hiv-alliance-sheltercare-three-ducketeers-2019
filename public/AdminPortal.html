@@ -12,7 +12,8 @@
 <body>
   <div class="container" id="update">
     <h1>Shelter Care Admin Portal</h1>
-    <button id="signout" onclick="return LogOut();">Sign Out</button>
+    <button id="signout" onclick="return LogOut();">Sign Out</button> <br />
+
 
     <div class="updateForm">
       <input type="text" class="updateForm" id="adminName" name="adminName" maxlength="100" placeholder="Admin email"/>
@@ -33,11 +34,29 @@
       <button onclick="myFunction()" class="updateBtn">Update</button>
       <br />
 
-      <input type="text" class="updateForm" id="programName" name="programName" maxlength="100" placeholder="Program Name"/>
+      <input type="text" class="updateForm" id="programName" name="programName" maxlength="100" placeholder="Program name"/>
       <select id="programChangeSelect">
           <option>Pick an option</option>
           <option>Add Program</option>
           <option>Delete Program</option>
+      </select>
+      <button onclick="myFunction()" class="updateBtn">Update</button>
+      <br />
+
+      <input type="text" class="updateForm" id="issueName" name="issueName" maxlength="100" placeholder="Issue type"/>
+      <select id="issueChangeSelect">
+          <option>Pick an option</option>
+          <option>Add Issue</option>
+          <option>Delete Issue</option>
+      </select>
+      <button onclick="myFunction()" class="updateBtn">Update</button>
+      <br />
+
+      <input type="text" class="updateForm" id="incidentEmailList" name="incidentEmailList" maxlength="100" placeholder="Incident email list"/>
+      <select id="incidentEmailListChangeSelect">
+          <option>Pick an option</option>
+          <option>Add incident email</option>
+          <option>Delete incident email</option>
       </select>
       <button onclick="myFunction()" class="updateBtn">Update</button>
       <br />
