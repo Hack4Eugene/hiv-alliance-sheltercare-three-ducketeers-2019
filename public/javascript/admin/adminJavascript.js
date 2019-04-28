@@ -37,10 +37,8 @@ function addAdminFunction()
 		return ;
 	}
 	var adminEmail = admin.value;
-	console.log(adminEmail);
 	var db = firebase.database().ref();
 	var query = "/encounterAdmins/"+Parse(adminEmail);
-	console.log(query);
 	db.child(query).once('value').then(function(snapshot){
 		if(snapshot.exists()){alert("this admin already exists"); return ;}
 		else
@@ -63,10 +61,8 @@ function addUserFunction()
 		return ;
 	}
 	var userEmail = user.value;
-	console.log(userEmail);
 	var db = firebase.database().ref();
 	var query = "/encounterUsers/"+Parse(userEmail);
-	console.log(query);
 	db.child(query).once('value').then(function(snapshot){
 		if(snapshot.exists()){alert("This user already exists"); return ;}
 		else
@@ -89,10 +85,8 @@ function deleteAdminFunction()
       return ;
     }
       var adminEmail = admin.value;
-      console.log(adminEmail);
       var db = firebase.database().ref();
 		var query = "/encounterAdmins/"+Parse(adminEmail);
-		console.log(query);
 		db.child(query).once("value").then(function(snapshot){
 		if (snapshot.exists()) {
 			if(confirm("Are you sure you want to delete this admin?"))
@@ -117,10 +111,8 @@ function deleteUserFunction()
       return ;
     }
       var userEmail = user.value;
-      console.log(userEmail);
       var db = firebase.database().ref();
 		var query = "/encounterUsers/"+Parse(userEmail);
-		console.log(query);
 		db.child(query).once("value").then(function(snapshot){
 		if (snapshot.exists()) {
 			if(confirm("Are you sure you want to delete this user?"))
@@ -135,4 +127,62 @@ function deleteUserFunction()
 		}
 	});
 		
+}
+function addProgramFunction()
+{
+	var program = document.getElementById("updateText");
+	if(program == "null" | program.value == "")
+	{
+		alert("please enter a program to change");
+		return ;
+	}
+	var prog = program.value;
+	var db = firebase.database().ref();
+	var query = "/programs/"+Parse(prog);
+	db.child(query).once("value").then(function(snapshot){
+		if(snapshot.exists())
+		{
+			alert("this program already exists");
+			return ;
+		}
+		else
+		{
+			updates = {};
+			updates[query] = true;
+			alert("program successfully added");
+			return firebase.database().ref().update(updates);
+		}
+	});	
+
+
+}
+function deleteProgramFunction()
+{
+	var program = document.getElementById("updateText");
+	if(program == "null" | program.value == "")
+	{
+		alert("please enter a program to change");
+		return ;
+	}
+	var prog = program.value;
+	var db = firebase.database().ref();
+	var query = "/programs/"+Parse(prog);
+	db.child(query).once("value").then(function(snapshot){
+		if(snapshot.exists())
+		{
+			if(confirm("Are you sure you want to delete this program?"))
+			{
+				db.child(query).remove();
+				alert("successfully removed " + prog);
+			}
+			return ;
+		}
+		else
+		{
+			alert("this program does not exist");
+			return ;
+		}
+	});	
+
+
 }
