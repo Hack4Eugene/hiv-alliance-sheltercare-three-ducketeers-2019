@@ -47,7 +47,33 @@ function addAdminFunction()
 		{
 			var updates = {};
 			updates[query] = true;
-			alert("admin successfully added to the database");
+			alert("Admin successfully added to the database");
+			return firebase.database().ref().update(updates);
+		}
+	});
+	return ;
+}
+
+function addUserFunction()
+{
+	var user = document.getElementById("updateText");
+	if(user == null || user.value == "")
+	{
+		alert("Please enter a users email to change");
+		return ;
+	}
+	var userEmail = user.value;
+	console.log(userEmail);
+	var db = firebase.database().ref();
+	var query = "/encounterUsers/"+Parse(userEmail);
+	console.log(query);
+	db.child(query).once('value').then(function(snapshot){
+		if(snapshot.exists()){alert("This user already exists"); return ;}
+		else
+		{
+			var updates = {};
+			updates[query] = true;
+			alert("User successfully added to the database");
 			return firebase.database().ref().update(updates);
 		}
 	});
