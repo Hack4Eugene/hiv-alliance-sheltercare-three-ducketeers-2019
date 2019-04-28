@@ -18,7 +18,7 @@
     </center>
     <label id="welcome_message"></label>
 
-    <div class="container" id="encounter">
+    <div class="container" id="update">
       <form>
         <input type="text" placeholder="User to edit" name="user_name">
         <input type="submit" value="Submit" action="ChangeAdminStatus()" method="get" name="submitButton">
@@ -36,6 +36,14 @@
         <a href="#">Add</a>
         <a href="#">Delete</a>
       </div>
+      <label class="label" for="adminName">Administrator</label> <br />
+      <input type="text" class="updateForm" id="adminName" name="adminName" maxlength="100" />
+      <button onclick="myFunction()" class="dropbtn">Update</button>
+      <div id="myDropdown" class="dropdown-content">
+        <a href="#">Add</a>
+        <a href="#">Delete</a>
+      </div>
+
     </div>
   </body>
   <script src="./javascript/admin/adminJavascript.js?v=15" type="application/javascript"> </script>
