@@ -33,14 +33,17 @@
     <script src="./javascript/admin/MakeChanges.js"></script>
 
     <div class="updateForm">
-      <label class="label" for="userName">User Name</label> <br />
-      <input type="text" class="updateForm" id="userName" name="userName" maxlength="100" />
+      <input type="text" class="updateForm" id="userName" name="userName" maxlength="100" placeholder="Admin email"/>
+      <select id="adminChangeSelect">
+          <option>Pick an option</option>
+          <option>Add Admin</option>
+          <option>Delete Admin</option>
+      </select>
       <button onclick="myFunction()" class="dropbtn">Update</button>
       <div id="myDropdown" class="dropdown-content">
         <a href="#">Add</a>
         <a href="#">Delete</a>
       </div>
-      <label class="label" for="adminName">Administrator</label> <br />
       <input type="text" class="updateForm" id="adminName" name="adminName" maxlength="100" />
       <button onclick="myFunction()" class="dropbtn">Update</button>
       <div id="myDropdown" class="dropdown-content">
