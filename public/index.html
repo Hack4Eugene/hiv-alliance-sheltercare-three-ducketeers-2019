@@ -10,13 +10,12 @@
         <link rel="stylesheet" type="text/css" href="styles.css" />
         <title>Encounter Portal</title>
     </head>
-  <body>
+  <body>  
+    <div class="container" id="encounter">
       <h1>Shelter Care Encounter Form Portals</h1>
-
-      <div class="container" id="encounter">
-        <button id="EncounterLogin" class="btn btn-action" onclick="return validateUser();    ">Encounter Login</button>
-        <button id="ManagerLogin" class="btn btn-action" onclick="return validateAdmin();    ">Admin Login</button>
-      </div>
+        <button id="EncounterLogin" class="btn btn-default btn-block btn-action" onclick="return validateUser();    ">Encounter Login</button>
+        <button id="ManagerLogin" class="btn btn-default btn-block btn-action" onclick="return validateAdmin();    ">Admin Login</button>
+    </div>
     <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
     <script src="./javascript/mis/app.js?v=5"></script>
     <script src="./javascript/user/Stat.js?v=2"></script>
