@@ -28,7 +28,7 @@ function Parse(str)
         return ret;
 }
 
-function AddAdmin()
+function addAdminFunction()
 {
 	var admin = document.getElementById("updateText");
 	if(admin == null || admin.value == "")
@@ -39,12 +39,15 @@ function AddAdmin()
 	var adminEmail = admin.value;
 	console.log(adminEmail);
 	var db = firebase.database().ref();
-	var query = "/encounterAdmin/"+Parse(adminEmail);
+	var query = "/encounterAdmins/"+Parse(adminEmail);
+	console.log(query);
 	db.child(query).once('value').then(function(snapshot){
-		if(snapshot.exists){alert("this admin exists"); return ;}
+		if(snapshot.exists()){alert("this admin already exists"); return ;}
 		else
 		{
-			var updates[query] = true;
+			var updates = {};
+			updates[query] = true;
+			alert("admin successfully added to the database");
 			return firebase.database().ref().update(updates);
 		}
 	});
