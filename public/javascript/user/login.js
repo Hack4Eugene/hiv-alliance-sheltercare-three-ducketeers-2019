@@ -28,7 +28,7 @@ function validateUser() {
                 var provider = new firebase.auth.GoogleAuthProvider();
                 // [END createprovider]
                 // [START addscopes]
-                provider.addScope('https://www.googleapis.com/auth/calendar');
+//                provider.addScope('https://www.googleapis.com/auth/gmail.send');
                 // [END addscopes]
                 // [START signin]
                 var signedInUser = firebase.auth().signInWithPopup(provider);
@@ -66,7 +66,7 @@ function validateAdmin() {
                 var provider = new firebase.auth.GoogleAuthProvider();
                 // [END createprovider]
                 // [START addscopes]
-                provider.addScope('https://www.googleapis.com/auth/calendar');
+ //               provider.addScope('https://www.googleapis.com/auth/gmail.send');
                 // [END addscopes]
                 // [START signin]
                 var signedInUser = firebase.auth().signInWithPopup(provider);
