@@ -49,3 +49,10 @@ function ParseForm()
 	updates[path+"Timestamp"] = address;
 	return firebase.database().ref().update(updates);	
 }
+
+function fillPrograms(){
+	var programNames;
+	for(i=0, i>programNames.length; i++;){
+		document.getElementById("dynamicProgram").innerHTML="<option value='"+programNames[i]+"'>"+programNames[i]+"</option>";
+	}
+}
