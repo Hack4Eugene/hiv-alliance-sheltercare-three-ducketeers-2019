@@ -42,7 +42,6 @@ function validateUser() {
 			else
 			{
 				alert("GET OUTTA MEH SWAMP");
-				firebase.auth().signOut();
 			}
 		});
                         // [END_EXCLUDE]
@@ -62,6 +61,8 @@ function validateUser() {
 }
 
 function validateAdmin() {
+	var finished = false;
+	var valid = false;
 	if(firebase.auth().currentUser != null)
 	{
 		firebase.auth().signOut(); 
@@ -92,13 +93,13 @@ function validateAdmin() {
 		if(snapshot.exists())
 		{
 			console.log("valid user");
-			document.window.href = "AdminPortal.html";
+			valid = true;
 		}
 		else
 		{
 			alert("GET OUTTA MEH SWAMP");
-			firebase.auth().signOut();
 		}
+		finished = true;
 	});
                         // [END_EXCLUDE]
                 }).catch(function(error) {
@@ -114,6 +115,11 @@ function validateAdmin() {
                 }); 
                 // [END signin]
         }   
+		while(!finished)
+		{
+			if(valid){window.href = "AdminPortal.html";}
+		}
 }
+
 
 
