@@ -1,43 +1,42 @@
 <html>
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-<link rel="stylesheet" type="text/css" href="styles.css" />
-<title>Encounter Portal</title>
-<style>
-</style>
-<title>Admin Portal</title>
-</head>
-<body>
-<center>
-<h1>Shelter Care Admin Portal</h1>
-</center>
-<P>
-<label id="welcome_message">
-</label>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <title>Encounter Portal</title>
+    <style>
+    </style>
+    <title>Admin Portal</title>
+  </head>
+  <body>
+    <center>
+      <h1>Shelter Care Admin Portal</h1>
+    </center>
+    <label id="welcome_message"></label>
 
-<div class="container" id="encounter">
-   <form>
-   <input type="text" placeholder="User to edit" name="user_name">
-   <input type="submit" value="Submit" action="ChangeAdminStatus()" method="get" name="submitButton">
-   </form>
-</div>
-<script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
-<script src="./javascript/admin/Stat.js"></script>
-<script src="./javascript/admin/MakeChanges.js"></script>
+    <div class="container" id="encounter">
+      <form>
+        <input type="text" placeholder="User to edit" name="user_name">
+        <input type="submit" value="Submit" action="ChangeAdminStatus()" method="get" name="submitButton">
+      </form>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+    <script src="./javascript/admin/Stat.js"></script>
+    <script src="./javascript/admin/MakeChanges.js"></script>
 
-<div class="updateForm">
-  <label class="label" for="userName">User Name</label> <br />
-  <input type="text" class="updateForm" id="userName" name="userName" maxlength="100" />
-  <button onclick="myFunction()" class="dropbtn">Update</button>
-  <div id="myDropdown" class="adminDropdown-content">
-    <a href="#">Add</a>
-    <a href="#">Delete</a>
-  </div>
-</div>
-</body>
+    <div class="updateForm">
+      <label class="label" for="userName">User Name</label> <br />
+      <input type="text" class="updateForm" id="userName" name="userName" maxlength="100" />
+      <button onclick="myFunction()" class="dropbtn">Update</button>
+      <div id="myDropdown" class="dropdown-content">
+        <a href="#">Add</a>
+        <a href="#">Delete</a>
+      </div>
+    </div>
+  </body>
+  <script src="./javascript/admin/adminJavascript.js?v=15" type="application/javascript"> </script>  
 </html>
