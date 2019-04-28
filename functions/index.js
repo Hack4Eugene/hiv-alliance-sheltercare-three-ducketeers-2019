@@ -7,16 +7,16 @@
 //  response.send("Hello from Firebase!");
 // });
 
-function CheckOther(val){
+//function CheckOther(val){
     //var val = $("#issueOther").val()
-    if(val == "other") {
-        $("#other").show();
-    } 
-    else {
-        $("#other").hide();
-    }
+  //  if(val == "other") {
+    //    $("#other").show();
+    //} 
+    //else {
+      //  $("#other").hide();
+    //}
 
-}
+//}
 
 
-$(document).ready(CheckOther)
+//$(document).ready(CheckOther)

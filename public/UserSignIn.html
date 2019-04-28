@@ -1,26 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
+<html>
+<head>
+<meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> 
         <link rel="stylesheet" type="text/css" href="styles.css" />
-        <title>Encounter Portal</title>
-    </head>
-  <body>  
+<title>Encounter Portal</title>
+</head>
+<body>
 <center>
-<h1>Shelter Care Encounter Form Portals</h1>
+<h1>Encounter Form Portal</h1>
 </center>
+<P>
+
 <div class="container" id="encounter">
-   <button id="EncounterLogin" class="btn btn-action" onclick="return SignInUser();    ">Encounter Login</button>
-   <button id="ManagerLogin" class="btn btn-action" onclick="return SignInAdmin();">Admin Login</button>
+<p>Users log in through this page to access the form. Admins go back and use the admin log in</p>
+   <button id="UserLogin" class="btn btn-action" onclick="return validateUser();">Login</button>
 </div>
 <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
 <script src="./javascript/mis/app.js?v=5"></script>
+<script src="./javascript/user/Stat.js?v=5"></script>
 <script src="./javascript/user/login.js?v=16" type="application/javascript"> </script>
 </body>
 </html>
-
