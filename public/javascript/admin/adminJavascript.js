@@ -17,3 +17,22 @@ window.onclick = function(event) {
     }
   }
 }
+
+function EditAdmins()
+{
+	var admin = document.getElementById("adminName");
+	var option = document.getElementById("adminChangeSelect").selected;
+	if(admin == null || admin.value == "")
+	{
+		alert("Please enter an admin email to change");
+	//	return ;
+	}
+	if(option = "Pick an option")
+	{
+		alert("Please pick an edit option");
+		//return ;
+	}
+	var adminEmail = admin.value;
+	console.log(adminEmail);
+	console.log(option);
+}

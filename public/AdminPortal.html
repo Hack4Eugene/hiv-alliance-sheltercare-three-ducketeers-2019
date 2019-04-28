@@ -14,18 +14,18 @@
     <h1>Shelter Care Admin Portal</h1>
     <button id="signout" onclick="return LogOut();">Sign Out</button>
     <div class="updateForm">
-      <input type="text" class="updateForm" id="userName" name="userName" maxlength="100" placeholder="Admin email"/>
+      <input type="text" class="updateForm" id="adminName" name="adminName" maxlength="100" placeholder="Admin email"/>
       <select id="adminChangeSelect">
           <option>Pick an option</option>
-          <option>Add Admin</option>
-          <option>Delete Admin</option>
+          <option id="addAdmin">Add Admin</option>
+          <option id="deleteAdmin">Delete Admin</option>
       </select>
-      <button onclick="myFunction()" class="dropbtn">Update</button>
+      <button onclick="EditAdmins()" class="dropbtn">Update Admin</button>
       <div id="myDropdown" class="dropdown-content">
         <a href="#">Add</a>
         <a href="#">Delete</a>
       </div>
-      <input type="text" class="updateForm" id="adminName" name="adminName" maxlength="100" />
+      <input type="text" class="updateForm" id="userName" name="userName" maxlength="100" />
       <button onclick="myFunction()" class="dropbtn">Update</button>
       <div id="myDropdown" class="dropdown-content">
         <a href="#">Add</a>
@@ -33,8 +33,9 @@
       </div>
     </div>
     <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+    <script src="./javascript/mis/app.js"></script>
     <script src="./javascript/admin/Stat.js"></script>
     <script src="./javascript/admin/MakeChanges.js"></script>
-    <script src="./javascript/admin/adminJavascript.js?v=15" type="application/javascript"> </script>
+    <script src="./javascript/admin/adminJavascript.js?v=20" type="application/javascript"> </script>
   </body>
 </html>
