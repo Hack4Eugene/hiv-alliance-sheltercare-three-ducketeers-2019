@@ -18,21 +18,35 @@ window.onclick = function(event) {
   }
 }
 
-function EditAdmins()
+function Parse(str)
 {
-	var admin = document.getElementById("adminName");
-	var option = document.getElementById("adminChangeSelect").selected;
+        var ret = str.replace(/\./g, "");             //remove all instances of invalid characters
+        ret = ret.replace(/#/g, "");
+        ret = ret.replace(/\$/g, "");
+        ret = ret.replace(/\[/g, "");
+        ret = ret.replace(/]/g, "");
+        return ret;
+}
+
+function AddAdmin()
+{
+	var admin = document.getElementById("updateText");
 	if(admin == null || admin.value == "")
 	{
 		alert("Please enter an admin email to change");
-	//	return ;
-	}
-	if(option = "Pick an option")
-	{
-		alert("Please pick an edit option");
-		//return ;
+		return ;
 	}
 	var adminEmail = admin.value;
 	console.log(adminEmail);
-	console.log(option);
+	var db = firebase.database().ref();
+	var query = "/encounterAdmin/"+Parse(adminEmail);
+	db.child(query).once('value').then(function(snapshot){
+		if(snapshot.exists){alert("this admin exists"); return ;}
+		else
+		{
+			var updates[query] = true;
+			return firebase.database().ref().update(updates);
+		}
+	});
+	return ;
 }
