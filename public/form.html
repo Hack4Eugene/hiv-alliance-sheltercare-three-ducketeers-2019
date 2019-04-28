@@ -60,16 +60,17 @@
             </div>
             <div class="form-group">
               <label class ="label" for="comment">Comments</label> <br />
-              <input type="text" maxlength="250" />
+              <input type="text" id="comments" maxlength="250" />
             </div>
             <div class="form-group">
-              <input type="submit" name="submit" value="Submit" />
+              <input type="submit" name="submit" value="Submit" onclick="return ParseForm();" method="get"/>
+              <input type="button" name="submit" value="Submit" onclick="return ParseForm();"/>
             </div>
           </form>
         </div>
         <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
-        <script src="../functions/index.js"></script>
         <script src="./javascript/mis/app.js?v=3"></script>
+        <script src="./javascript/form/FormEntry.js"></script>
         <script src="./javascript/user/UserStat.js?v=3"></script>
         <script src="./javascript/user/Logout.js?v=3"></script>
     </body>
