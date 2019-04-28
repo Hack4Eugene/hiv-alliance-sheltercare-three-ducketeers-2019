@@ -22,7 +22,7 @@
             </div>
           </nav>
         <div class="container">
-          <form method="POST">
+          <form id="test-form">
             <div class="form-group">
               <label class="label" for="clientname">Client Name</label> <br />
               <input type="text" class="form-group" id="clientname" name="clientname" maxlength="100" />
@@ -34,13 +34,7 @@
             <div class="form-group">
               <label class="label" for="program">Program</label><br />
               <select id="program" class="form-group" name="program">
-                <option value="SRA">SRA</option>
-                <option value="SRA2">SRA2</option>
-                <option value="SRA-YA">SRA-YA</option>
-                <option value="Madrone">Madrone</option>
-                <option value="Spruce">Spruce</option>
-                <option value="Camas">Camas</option>
-                <option value="Sahalie">Sahalie</option>
+                <div id="dynamicProgram"></div>
               </select>
             </div>
             <div class="form-group">
@@ -60,7 +54,7 @@
             </div>
             <div class="form-group">
               <label class ="label" for="comment">Comments</label> <br />
-              <input type="text" id="comments" maxlength="250" />
+              <input type="text" id="comments" name="comment" class="form-group" maxlength="250" />
             </div>
             <div class="form-group">
               <input type="submit" name="submit" value="Submit" onclick="return ParseForm();" method="get"/>
