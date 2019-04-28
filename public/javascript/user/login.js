@@ -1,3 +1,12 @@
+function SignInAdmin()
+{
+	window.location = "AdminSignIn.html";
+}
+function SignInUser()
+{
+	window.location = "UserSignIn.html";
+}
+
 function parseString(inStr)
 {
 	var ret = inStr.replace(/\./g, "");		//remove all instances of invalid characters
@@ -29,21 +38,6 @@ function validateUser() {
                         // The signed-in user info.
                         var user = result.user;
                         // [START_EXCLUDE]
-		//check to make sure given gmail is a valid user
-		var db = firebase.database().ref();
-		var inStr = '/encounterUsers/'+parseString(firebase.auth().currentUser.email);
-		//var inStr = '/encounterUsers/email1';
-		console.log("database query: "+inStr);
-		db.child(inStr).once('value').then(function(snapshot) {
-			if(snapshot.exists())
-			{
-				console.log("valid user");
-			}
-			else
-			{
-				alert("GET OUTTA MEH SWAMP");
-			}
-		});
                         // [END_EXCLUDE]
                 }).catch(function(error) {
                         // Handle Errors here.
@@ -61,8 +55,6 @@ function validateUser() {
 }
 
 function validateAdmin() {
-	var finished = false;
-	var valid = false;
 	if(firebase.auth().currentUser != null)
 	{
 		firebase.auth().signOut(); 
@@ -84,23 +76,6 @@ function validateAdmin() {
                         // The signed-in user info.
                         var user = result.user;
                         // [START_EXCLUDE]
-	//check to make sure given gmail is a valid user
-	var db = firebase.database().ref();
-	var inStr = '/encounterAdmins/'+parseString(firebase.auth().currentUser.email);
-	//var inStr = '/encounterUsers/email1';
-	console.log("database query: "+inStr);
-	db.child(inStr).once('value').then(function(snapshot) {
-		if(snapshot.exists())
-		{
-			console.log("valid user");
-			valid = true;
-		}
-		else
-		{
-			alert("GET OUTTA MEH SWAMP");
-		}
-		finished = true;
-	});
                         // [END_EXCLUDE]
                 }).catch(function(error) {
                         // Handle Errors here.
@@ -115,10 +90,6 @@ function validateAdmin() {
                 }); 
                 // [END signin]
         }   
-		while(!finished)
-		{
-			if(valid){window.href = "AdminPortal.html";}
-		}
 }
 
 
