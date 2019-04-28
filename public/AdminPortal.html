@@ -12,38 +12,49 @@
 <body>
   <div class="container" id="update">
     <h1>Shelter Care Admin Portal</h1>
-    <button id="signout" onclick="return LogOut();">Sign Out</button> <br />
-
-
+    <button id="signout" class="btn btn-default" onclick="return LogOut();">Sign Out</button> <br />
     <div class="updateForm">
       <input type="text" class="updateForm" id="updateText" name="updateText" maxlength="100" placeholder="Enter text to update"/>
       <br />
-
-      <button onclick="addAdminFunction()" class="updateBtn">Add Admin</button>
-      <button onclick="deleteAdminFunction()" class="updateBtn">Delete Admin</button>
+      <div class="btn-group btn-group-lg">
+          <button onclick="addAdminFunction()" class="btn btn-default">Add Admin Email</button>
+          <button onclick="deleteAdminFunction()" class="btn btn-default">Delete Admin Email</button>
+      </div>
       <br />
-      <button onclick="addUserFunction()" class="updateBtn">Add User</button>
-      <button onclick="deleteUserFunction()" class="updateBtn">Delete User</button>
+      <div class="btn-group btn-group-lg">
+          <button onclick="addUserFunction()" class="btn btn-default">Add User Email</button>
+          <button onclick="deleteUserFunction()" class="btn btn-default">Delete User Email</button>
+      </div>
       <br />
-      <button onclick="addProgramFunction()" class="updateBtn">Add Program</button>
-      <button onclick="deleteProgramFunction()" class="updateBtn">Delete Program</button>
+      <div class="btn-group btn-group-lg">
+          <button onclick="addProgramFunction()" class="btn btn-default">Add Program</button>
+          <button onclick="deleteProgramFunction()" class="btn btn-default">Delete Program</button>
+      </div>
       <br />
-      <button onclick="addIssueFunction()" class="updateBtn">Add Issue</button>
-      <button onclick="deleteIssueFunction()" class="updateBtn">Delete Issue</button>
+      <div class="btn-group btn-group-lg">
+          <button onclick="addIssueFunction()" class="btn btn-default">Add Issue</button>
+          <button onclick="deleteIssueFunction()" class="btn btn-default">Delete Issue</button>
+      </div>
       <br />
-      <button onclick="addIncidentEmailListFunction()" class="updateBtn">Add Incident Email List</button>
-      <button onclick="deleteIncidentEmailListFunction()" class="updateBtn">Delete Incident Email List</button>
+      <div class="btn-group btn-group-lg">
+          <button onclick="addIncidentEmailListFunction()" class="btn btn-default">Add Incident Email</button>
+          <button onclick="deleteIncidentEmailListFunction()" class="btn btn-default">Delete Incident Email</button>
+      </div>
       <br />
-      <button onclick="addSheetIdFunction()" class="updateBtn">Add Sheet Id</button>
-      <button onclick="deleteSheetIdFunction()" class="updateBtn">Delete Sheet Id</button>
-      <br />
-
-
+      <div class="btn-group btn-group-lg">
+          <button onclick="addSheetIdFunction()" class="btn btn-default">Add Sheet ID</button>
+          <button onclick="deleteSheetIdFunction()" class="btn btn-default">Delete Sheet ID</button>
+      </div>
     </div>
     <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
     <script src="./javascript/mis/app.js"></script>
     <script src="./javascript/admin/Stat.js"></script>
     <script src="./javascript/admin/MakeChanges.js"></script>
+<<<<<<< HEAD
+    <script src="./javascript/admin/adminJavascript.js?v=15" type="application/javascript"> </script>
+    </div>
+=======
     <script src="./javascript/admin/adminJavascript.js?v=20" type="application/javascript"> </script>
+>>>>>>> 85f897d5e07e7ab7fe33a46eae188570a1dc00bc
   </body>
 </html>
