@@ -2,14 +2,17 @@ body {
     padding: 1em;
     font-family: 'Roboto', sans-serif;
     background-image: linear-gradient(rgb(0,181,200), white);
+    background-repeat: no-repeat;
     color: rgb(68, 68, 68);
 }
-.form-group {
-    padding: .5em;
+h1{
+    text-align: center;
+    margin-bottom: 1em;
+}
+button{
+    align-content: center;
 }
 .label {
-    font-weight: bold;
-}
-#other {
-    margin-left: 20px;
+    font-size:larger;
+    color: rgb(68, 68, 68);
 }
