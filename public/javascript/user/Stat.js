@@ -2,7 +2,8 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
 	if(firebaseUser) {
  //check to make sure given gmail is a valid user
                 var db = firebase.database().ref();
-                var inStr = '/encounterUsers/'+parseString(firebase.auth().currentUser.email);
+		var parsed = parseString(firebase.auth().currentUser.email);
+                var inStr = '/encounterUsers/'+parsed;
                 db.child(inStr).once('value').then(function(snapshot) {
                        	if(snapshot.exists())
                        	{       
